@@ -4,6 +4,8 @@ public class MatrixMatrixMulSerial {
 	
 	public long[][] multiply(long[][] matrix1, long[][] matrix2)
 	{
+		
+		/*
 		System.out.println("Serial Running ....");
 		
 		int N = matrix1.length;
@@ -17,6 +19,14 @@ public class MatrixMatrixMulSerial {
 		
 		//TODO: Matrix Multiplication
 		
-		return result;
+		return result;*/
+		
+		int sum;
+		
+		int indexSize = matrix1.length - 1;
+		for(int i = 0; i < matrix1.length; i++) {
+			
+			sum = (int) (matrix1[i][i] + matrix2[i][indexSize - i]);
+		
 	}
 }
