@@ -28,18 +28,26 @@ public class Main
 		MatrixMatrixMulSerial matrixMatrixMulSerial = new MatrixMatrixMulSerial();
 		MatrixMatrixMulParallel matrixMatrixMulParallel = new MatrixMatrixMulParallel();
 		
+		
+		//TO BE FIXED
 		long startTime, endTime, serialTime, parTime;
 		startTime = System.currentTimeMillis();
-		long[][] resultSerial =  matrixMatrixMulSerial.multiply(matrix1, matrix2);
+		long resultSerial =  matrixMatrixMulSerial.multiply(matrix1, matrix2);
 		endTime = System.currentTimeMillis();
 		serialTime = endTime - startTime;
 		
+		
+		
+		//TO BE FIXED
 		startTime = System.currentTimeMillis();
-		long[][] resultParallel = matrixMatrixMulParallel.multiply(matrix1, matrix2);
+		long resultParallel = matrixMatrixMulParallel.multiply(matrix1, matrix2);
 		endTime = System.currentTimeMillis();
 		parTime = endTime - startTime;
 		
-		compareResults(resultSerial, resultParallel);
+		
+		
+		//can be used for small scale testing 
+		//compareResults(resultSerial, resultParallel);
 
 
 		System.out.println("serialTime=" + serialTime);
@@ -49,21 +57,28 @@ public class Main
 		
     }
    
-	private static void compareResults(long[][] arr1, long[][] arr2)
+    /*//small scale testing 
+	private static void compareResults(long resultSerial, long resultParallel)
 	{
-		if (Arrays.deepEquals(arr1, arr2)) 
+		if (Arrays.deepEquals(resultSerial, resultParallel)) 
             System.out.println("The results are the same"); 
         else
             System.out.println("The results are NOT the same"); 
 	}
-	private static void readToFile(String filename, long[][] resultMatrix) throws FileNotFoundException {
+	
+	*/
+    
+    
+	private static void readToFile(String filename, long resultMatrix) throws FileNotFoundException {
 
 		PrintWriter writer = new PrintWriter(filename);
-		for (long[] longs : resultMatrix) {
-			writer.println(Arrays.toString(longs));
-		}
+		
+			writer.println(resultMatrix);
+		
 		writer.close();
 	}
+	
+	
 	private static long[][] readFile_ToMatrix(File matrix) throws FileNotFoundException {
 
     	Scanner scanner1 = new Scanner(matrix);
