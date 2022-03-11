@@ -47,7 +47,7 @@ public class Main
 		
 		
 		//can be used for small scale testing 
-		//compareResults(resultSerial, resultParallel);
+		compareResults(resultSerial, resultParallel);
 
 
 		System.out.println("serialTime=" + serialTime);
@@ -55,18 +55,24 @@ public class Main
 
 		//TODO: compute speedup
 		
+		float speedup = parTime/serialTime;
+		System.out.print("Speed up is : " + speedup);
+		readToFile("resultSerial.txt", resultSerial);
+		readToFile("resultPar.txt", resultParallel);
+		
+		
     }
    
-    /*//small scale testing 
+    //small scale testing 
 	private static void compareResults(long resultSerial, long resultParallel)
 	{
-		if (Arrays.deepEquals(resultSerial, resultParallel)) 
+		if (resultSerial == resultParallel)
             System.out.println("The results are the same"); 
         else
             System.out.println("The results are NOT the same"); 
 	}
 	
-	*/
+	
     
     
 	private static void readToFile(String filename, long resultMatrix) throws FileNotFoundException {
