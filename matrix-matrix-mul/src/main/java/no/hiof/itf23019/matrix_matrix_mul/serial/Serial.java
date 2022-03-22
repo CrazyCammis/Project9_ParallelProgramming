@@ -1,6 +1,6 @@
 package no.hiof.itf23019.matrix_matrix_mul.serial;
 
-public class MatrixMatrixMulSerial {
+public class Serial {
 	
 	public long multiply(long[][] matrix1, long[][] matrix2)
 	{

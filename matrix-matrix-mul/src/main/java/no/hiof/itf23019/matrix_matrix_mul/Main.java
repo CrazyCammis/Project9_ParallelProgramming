@@ -1,5 +1,7 @@
 package no.hiof.itf23019.matrix_matrix_mul;
 
+import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
+
 import java.io.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -7,8 +9,6 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import no.hiof.itf23019.matrix_matrix_mul.parallel.MatrixMatrixMulParallel;
-import no.hiof.itf23019.matrix_matrix_mul.serial.MatrixMatrixMulSerial;
 
 public class Main 
 {
@@ -25,14 +25,14 @@ public class Main
 		long[][] matrix2 = readFile_ToMatrix(MatrixB);
 		
 		
-		MatrixMatrixMulSerial matrixMatrixMulSerial = new MatrixMatrixMulSerial();
+		Serial serial = new Serial();
 		MatrixMatrixMulParallel matrixMatrixMulParallel = new MatrixMatrixMulParallel();
 		
 		
 		//TO BE FIXED
 		long startTime, endTime, serialTime, parTime;
 		startTime = System.currentTimeMillis();
-		long resultSerial =  matrixMatrixMulSerial.multiply(matrix1, matrix2);
+		long resultSerial =  serial.multiply(matrix1, matrix2);
 		endTime = System.currentTimeMillis();
 		serialTime = endTime - startTime;
 		
