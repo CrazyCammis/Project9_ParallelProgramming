@@ -2,7 +2,7 @@ package no.hiof.itf23019.matrix_matrix_mul.serial;
 
 public class Serial {
 	
-	public long multiply(long[][] matrix1, long[][] matrix2)
+	public long multiply(long[][] matrix1)
 	{
 		
 		/*
@@ -26,7 +26,7 @@ public class Serial {
 		int indexSize = matrix1.length - 1;
 		for(int i = 0; i < matrix1.length; i++) {
 			long m1= matrix1[i][i];
-			long m2 =  matrix2[i][indexSize - i];
+			long m2 =  matrix1[indexSize - i][indexSize - i];
 			
 			String holde1 =  "matrix1[" + i +"]["+i+"]";
 			String holde2 =  "matrix2[" + i +"]["+(indexSize - i)+"]";

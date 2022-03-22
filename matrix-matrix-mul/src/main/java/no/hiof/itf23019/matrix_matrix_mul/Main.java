@@ -37,7 +37,7 @@ public class Main
 		long startTime, endTime, serialTime, parTime;
 		
 		startTime = System.currentTimeMillis();
-		long resultSerial =  serial.multiply(matrix1, matrix2);
+		long resultSerial =  serial.multiply(matrix1);
 		endTime = System.currentTimeMillis();
 		serialTime = endTime - startTime;
 		
