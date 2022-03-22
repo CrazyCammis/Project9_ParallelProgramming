@@ -1,16 +1,12 @@
 package no.hiof.itf23019.matrix_matrix_mul;
 
-import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
-
-import java.io.*;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.Random;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
-
 import Parallel_Multiplication_task.ParallelStart;
+import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
 
 
 public class Main 
@@ -45,7 +41,7 @@ public class Main
 		
 		//TO BE FIXED
 		startTime = System.currentTimeMillis();
-		long resultParallel = parallel.calculate(matrix1, matrix2);
+		long resultParallel = parallel.calculate(matrix1);
 		endTime = System.currentTimeMillis();
 		parTime = endTime - startTime;
 		
