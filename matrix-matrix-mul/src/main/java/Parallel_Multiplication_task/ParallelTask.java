@@ -53,7 +53,7 @@ public class ParallelTask extends RecursiveTask<Long>{
 	{
 
 		int indexSize = matrix1.length - 1;
-		for(int i = 0; i < matrix1.length; i++) {
+		for(int i = start; i < end; i++) {
 			
 			result =+ matrix1[i][i] + matrix2[i][indexSize - i]; 
 		}

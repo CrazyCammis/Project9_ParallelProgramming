@@ -9,10 +9,9 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-<<<<<<< Updated upstream
-=======
+
 import Parallel_Multiplication_task.ParallelStart;
->>>>>>> Stashed changes
+
 
 public class Main 
 {
@@ -29,13 +28,9 @@ public class Main
 		long[][] matrix2 = readFile_ToMatrix(MatrixB);
 		
 		
-<<<<<<< Updated upstream
+
 		Serial serial = new Serial();
-		MatrixMatrixMulParallel matrixMatrixMulParallel = new MatrixMatrixMulParallel();
-=======
-		MatrixMatrixMulSerial matrixMatrixMulSerial = new MatrixMatrixMulSerial();
 		ParallelStart parallel = new ParallelStart();
->>>>>>> Stashed changes
 		
 		
 		//TO BE FIXED
