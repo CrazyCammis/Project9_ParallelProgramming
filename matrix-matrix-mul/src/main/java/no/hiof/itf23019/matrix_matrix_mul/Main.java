@@ -9,6 +9,10 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+<<<<<<< Updated upstream
+=======
+import Parallel_Multiplication_task.ParallelStart;
+>>>>>>> Stashed changes
 
 public class Main 
 {
@@ -25,12 +29,18 @@ public class Main
 		long[][] matrix2 = readFile_ToMatrix(MatrixB);
 		
 		
+<<<<<<< Updated upstream
 		Serial serial = new Serial();
 		MatrixMatrixMulParallel matrixMatrixMulParallel = new MatrixMatrixMulParallel();
+=======
+		MatrixMatrixMulSerial matrixMatrixMulSerial = new MatrixMatrixMulSerial();
+		ParallelStart parallel = new ParallelStart();
+>>>>>>> Stashed changes
 		
 		
 		//TO BE FIXED
 		long startTime, endTime, serialTime, parTime;
+		
 		startTime = System.currentTimeMillis();
 		long resultSerial =  serial.multiply(matrix1, matrix2);
 		endTime = System.currentTimeMillis();
@@ -40,7 +50,7 @@ public class Main
 		
 		//TO BE FIXED
 		startTime = System.currentTimeMillis();
-		long resultParallel = matrixMatrixMulParallel.multiply(matrix1, matrix2);
+		long resultParallel = parallel.calculate(matrix1, matrix2);
 		endTime = System.currentTimeMillis();
 		parTime = endTime - startTime;
 		
@@ -116,6 +126,11 @@ public class Main
 			for(int j = 0; j < Columns; j++) {
 				k[i][j] = scanner3.nextInt();
 			}
-		return k;
+		scanner1.close();
+		scanner2.close();
+		scanner3.close();
+		
+		return k;	
+		
 	}
 }

@@ -4,7 +4,7 @@ import java.util.concurrent.ForkJoinPool;
 
 public class ParallelStart {
 	
-	public long calculate(int[] matrix1, int[] matrix2) {
+	public long calculate(long[][] matrix1, long[][] matrix2) {
 		
 		System.out.println("Parallel running...");
 		

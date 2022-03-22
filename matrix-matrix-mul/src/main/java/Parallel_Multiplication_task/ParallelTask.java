@@ -7,13 +7,13 @@ public class ParallelTask extends RecursiveTask<Long>{
 	
 	private static final long serialVersionUID = 935729182687362668L;
 	
-	private int[] matrix1;
-	private int[] matrix2;
+	private long[][] matrix1;
+	private long[][] matrix2;
 	private int start, end;
 	private long result;
 	private int threshold = 1_000;
 	
-	public ParallelTask(int[] matrix1, int[] matrix2, int start, int end, long result)
+	public ParallelTask(long[][] matrix1, long[][] matrix2, int start, int end, long result)
 	{
 		this.matrix1 = matrix1;
 		this.matrix2 = matrix2;
@@ -27,7 +27,7 @@ public class ParallelTask extends RecursiveTask<Long>{
 	{
 		if ((end-start) < threshold)
 		{
-			//result = serial version of the program once the function names are changed
+			calculate(matrix1, matrix2, start, end, result);
 		}
 		else
 		{
@@ -47,5 +47,16 @@ public class ParallelTask extends RecursiveTask<Long>{
 		
 		return result;
 	}
-	
+
+
+	private void calculate(long[][] matrix1, long[][] matrix2, int start, int end, long result)
+	{
+
+		int indexSize = matrix1.length - 1;
+		for(int i = 0; i < matrix1.length; i++) {
+			
+			result =+ matrix1[i][i] + matrix2[i][indexSize - i]; 
+		}
+	}
+
 }
