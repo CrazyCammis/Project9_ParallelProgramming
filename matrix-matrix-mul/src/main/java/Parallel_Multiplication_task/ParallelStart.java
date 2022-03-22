@@ -4,14 +4,14 @@ import java.util.concurrent.ForkJoinPool;
 
 public class ParallelStart {
 	
-	public long calculate(long[][] matrix1, long[][] matrix2) {
+	public long calculate(long[][] matrix) {
 		
 		System.out.println("Parallel running...");
 		
-		int N = matrix1.length;
+		int N = matrix.length;
 		long result = 0;
 		
-		ParallelTask task = new ParallelTask(matrix1, matrix2, 0, N, result);
+		ParallelTask task = new ParallelTask(matrix, 0, N, result);
 		ForkJoinPool pool = new ForkJoinPool();
 		result = pool.invoke(task);
 		
