@@ -1,8 +1,6 @@
-<<<<<<<< HEAD:MatrixDiagonal/src/main/java/anderscg/itf23019/project9/Main.java
+
 package anderscg.itf23019.project9;
-========
-package no.hiof.itf23019.matrix_matrix_mul;
->>>>>>>> parent of 9b82ec1 (updates?):matrix-matrix-mul/src/main/java/no/hiof/itf23019/matrix_matrix_mul/Main.java
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,10 +14,7 @@ import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
 public class Main 
 {
     public static void main( String[] args ) throws FileNotFoundException {
-    	int N = 10_000;
-		int M = 1_000;
-		int P = 1_000;
-		
+    	
 		File MatrixA = new File("test1.txt");
 		
 		//File compareator = new File("MatrixB.txt");
@@ -60,18 +55,13 @@ public class Main
 		
 		
 		
-<<<<<<<< HEAD:MatrixDiagonal/src/main/java/anderscg/itf23019/project9/Main.java
 		//see if they are the same
 		compareResults(dig1Ser, dig1Par, dig2Ser, dig2Par);
 		System.out.println("both are the same"); 
 		
 		//compareResults(resultSerial, resultParallel);
 		//System.out.println("both are the same as the the true result"); 
-========
-		//can be used for small scale testing 
-		compareResults(resultSerial, resultParallel);
 
->>>>>>>> parent of 9b82ec1 (updates?):matrix-matrix-mul/src/main/java/no/hiof/itf23019/matrix_matrix_mul/Main.java
 
 		System.out.println("serialTime=" + serialTime);
 		System.out.println("parTime=" + parTime);
