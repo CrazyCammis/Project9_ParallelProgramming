@@ -12,9 +12,12 @@ public class Serial {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		long dig1 = 0, dig2 = 0;
 		
 =======
+=======
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======

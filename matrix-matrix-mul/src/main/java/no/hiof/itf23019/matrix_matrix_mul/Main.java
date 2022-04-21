@@ -58,10 +58,14 @@ public class Main
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		long[] resultParallel = parallel.calculate(matrix1);
 		long dig1Par= resultParallel[0];
 		long dig2Par= resultParallel[1];
 
+=======
+		long resultParallel = parallel.calculate(matrix1, matrix2);
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 		long resultParallel = parallel.calculate(matrix1, matrix2);
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
