@@ -10,6 +10,7 @@ public class ParallelStart {
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public long[] calculate(long[][] matrix) {
 		
 		System.out.println("Parallel running...");
@@ -25,6 +26,15 @@ public class ParallelStart {
 		long result = 0;
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 		
+=======
+	public long calculate(long[][] matrix1, long[][] matrix2) {
+		
+		System.out.println("Parallel running...");
+		
+		int N = matrix1.length;
+		long result = 0;
+		
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 	public long calculate(long[][] matrix1, long[][] matrix2) {
 		

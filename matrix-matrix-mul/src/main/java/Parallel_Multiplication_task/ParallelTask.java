@@ -19,7 +19,11 @@ public class ParallelTask extends RecursiveTask<long[]>{
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public ParallelTask(long[][] matrix, int start, int end, long[] result)
+=======
+	public ParallelTask(long[][] matrix1, long[][] matrix2, int start, int end, long result)
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 	public ParallelTask(long[][] matrix1, long[][] matrix2, int start, int end, long result)
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
@@ -60,7 +64,11 @@ public class ParallelTask extends RecursiveTask<long[]>{
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private void calculate(long[][] matrix, int start, int end, long[] result)
+=======
+	private void calculate(long[][] matrix1, long[][] matrix2, int start, int end, long result)
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 	private void calculate(long[][] matrix1, long[][] matrix2, int start, int end, long result)
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
@@ -74,8 +82,12 @@ public class ParallelTask extends RecursiveTask<long[]>{
 			
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			result[0] =+ matrix[i][i];
 			result[1]+= matrix[i][indexSize - i]; 
+=======
+			result =+ matrix1[i][i] + matrix2[i][indexSize - i]; 
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 =======
 			result =+ matrix1[i][i] + matrix2[i][indexSize - i]; 
 >>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
