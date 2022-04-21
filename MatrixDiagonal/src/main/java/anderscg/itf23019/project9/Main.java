@@ -1,58 +1,83 @@
-package anderscg.itf23019.project9Main;
-
-import anderscg.itf23019.project9Main.serial.Serial;
+<<<<<<<< HEAD:MatrixDiagonal/src/main/java/anderscg/itf23019/project9/Main.java
+package anderscg.itf23019.project9;
+========
+package no.hiof.itf23019.matrix_matrix_mul;
+>>>>>>>> parent of 9b82ec1 (updates?):matrix-matrix-mul/src/main/java/no/hiof/itf23019/matrix_matrix_mul/Main.java
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import Parallel_Multiplication_task.ParallelStart;
+import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
+
 
 public class Main 
 {
-    public static void main(String[] args ) throws FileNotFoundException {
+    public static void main( String[] args ) throws FileNotFoundException {
     	int N = 10_000;
 		int M = 1_000;
 		int P = 1_000;
 		
-		File MatrixA = new File("MatrixA.txt");
-		File MatrixB = new File("MatrixB.txt");
+		File MatrixA = new File("test1.txt");
 		
+		//File compareator = new File("MatrixB.txt");
 
 		long[][] matrix1 = readFile_ToMatrix(MatrixA);
-		long[][] matrix2 = readFile_ToMatrix(MatrixB);
 		
+		
+		
+		//long trueResult = trueReultReader(compareator);
 		
 
 		Serial serial = new Serial();
 		ParallelStart parallel = new ParallelStart();
-
-
+		
+		
+		//TO BE FIXED
 		long startTime, endTime, serialTime, parTime;
-
-		//Serial
+		
 		startTime = System.currentTimeMillis();
-		long resultSerial =  serial.multiply(matrix1);
+		long[] resultSerial =  serial.multiply(matrix1);
+		long dig1Ser= resultSerial[0];
+		long dig2Ser= resultSerial[0];
+
+		
 		endTime = System.currentTimeMillis();
 		serialTime = endTime - startTime;
 		
 		
 		
-		//Parallel
+		//TO BE FIXED
 		startTime = System.currentTimeMillis();
-		long resultParallel = parallel.calculate(matrix1);
+		long[] resultParallel = parallel.calculate(matrix1);
+		long dig1Par= resultParallel[0];
+		long dig2Par= resultParallel[1];
+
 		endTime = System.currentTimeMillis();
 		parTime = endTime - startTime;
 		
 		
 		
+<<<<<<<< HEAD:MatrixDiagonal/src/main/java/anderscg/itf23019/project9/Main.java
 		//see if they are the same
+		compareResults(dig1Ser, dig1Par, dig2Ser, dig2Par);
+		System.out.println("both are the same"); 
+		
+		//compareResults(resultSerial, resultParallel);
+		//System.out.println("both are the same as the the true result"); 
+========
+		//can be used for small scale testing 
 		compareResults(resultSerial, resultParallel);
 
+>>>>>>>> parent of 9b82ec1 (updates?):matrix-matrix-mul/src/main/java/no/hiof/itf23019/matrix_matrix_mul/Main.java
 
 		System.out.println("serialTime=" + serialTime);
 		System.out.println("parTime=" + parTime);
 
+		//TODO: compute speedup
+		
 		float speedup = parTime/serialTime;
 		System.out.print("Speed up is : " + speedup);
 		readToFile("resultSerial.txt", resultSerial);
@@ -62,9 +87,9 @@ public class Main
     }
    
     //small scale testing 
-	private static void compareResults(long resultSerial, long resultParallel)
+	private static void compareResults(long dig1Ser, long dig1Par, long dig2Ser, long dig2Par)
 	{
-		if (resultSerial == resultParallel)
+		if (dig1Ser == dig1Par && dig2Ser == dig2Par)
             System.out.println("The results are the same"); 
         else
             System.out.println("The results are NOT the same"); 
@@ -73,11 +98,11 @@ public class Main
 	
     
     
-	private static void readToFile(String filename, long resultMatrix) throws FileNotFoundException {
+	private static void readToFile(String filename, long[] result) throws FileNotFoundException {
 
 		PrintWriter writer = new PrintWriter(filename);
 		
-			writer.println(resultMatrix);
+			writer.println(result);
 		
 		writer.close();
 	}
@@ -121,4 +146,13 @@ public class Main
 		return k;	
 		
 	}
+	private static long trueReultReader(File result) throws FileNotFoundException {
+   	 Scanner sc = new Scanner(new File("myNumbers"));
+   	 long along = 0;
+        while (sc.hasNextLong()) {
+            along = sc.nextLong();
+        }
+       
+		return along;
+   }
 }
