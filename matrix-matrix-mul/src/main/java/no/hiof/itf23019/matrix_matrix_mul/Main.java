@@ -4,13 +4,17 @@ package anderscg.itf23019.project9;
 package no.hiof.itf23019.matrix_matrix_mul;
 >>>>>>>> parent of 9b82ec1 (updates?):matrix-matrix-mul/src/main/java/no/hiof/itf23019/matrix_matrix_mul/Main.java
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
+
+import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
+
 import Parallel_Multiplication_task.ParallelStart;
-import no.hiof.itf23019.matrix_matrix_mul.serial.Serial;
 
 
 public class Main 
@@ -51,10 +55,26 @@ public class Main
 		
 		//TO BE FIXED
 		startTime = System.currentTimeMillis();
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 		long[] resultParallel = parallel.calculate(matrix1);
 		long dig1Par= resultParallel[0];
 		long dig2Par= resultParallel[1];
 
+=======
+		long resultParallel = parallel.calculate(matrix1, matrix2);
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
+=======
+		long resultParallel = parallel.calculate(matrix1, matrix2);
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
+=======
+		long resultParallel = parallel.calculate(matrix1, matrix2);
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
+=======
+		long resultParallel = parallel.calculate(matrix1, matrix2);
+>>>>>>> parent of 14e51a5 (Merge branch 'main' of https://github.com/CrazyCammis/Project9_ParallelProgramming)
 		endTime = System.currentTimeMillis();
 		parTime = endTime - startTime;
 		
